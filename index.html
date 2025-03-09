@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/x-icon" href="./favicon.svg">
+        <title>Valentine</title>
+        <style>
+            body {
+                text-align: center;
+                font-family: Arial, sans-serif;
+                margin-top: 50px;
+                background: #9e7299;
+            }
+	    #emoji {
+	    	font-size: 60px;
+	        margin-bottom: 10px;
+                transition: all 0.3s ease;
+	    }
+            #question {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            .buttons {
+                justify-content: center;
+                gap: 20px;
+            }
+            button {
+                padding: 10px 20px;
+		margin-left: 10px;
+                font-size: 18px;
+                border: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            #yes {
+                background-color: green;
+                color: white;
+                border-radius: 5px;
+            }
+            #no {
+                background-color: red;
+                color: white;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+	<div id="emoji">🤔</div>
+        <div id="question">Will you be my Valentine?</div>
+        <div class="buttons">
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+        </div>
+
+        <script>
+            let yesButton = document.getElementById("yes");
+            let noButton = document.getElementById("no");
+            let questionText = document.getElementById("question");
+            let emoji = document.getElementById("emoji");
+            let phrases = [
+                "Press yes.",
+                "Think about it.",
+                "I´m waiting...",
+                "I want you to press yes!.",
+                "Do you even love me?",
+		"Think about it again...",
+                "I will be sad if you don´t press yes.",
+                "Why noot.",
+                "Don´t break my heart!",
+            ];
+            let currentSize = 18;
+            let phraseIndex = 0;
+
+            yesButton.addEventListener("click", function () {
+                window.location.href = "./yes.html";
+            });
+
+            noButton.addEventListener("click", function () {
+                currentSize += 10;
+                yesButton.style.fontSize = currentSize + "px";
+                if (phraseIndex < phrases.length) {
+                    questionText.textContent = phrases[phraseIndex];
+			if (phraseIndex == 0) {
+				emoji.textContent = "😮";
+			} else {
+				emoji.textContent = "😥";
+			}
+                    phraseIndex++;
+                } else {
+                    yesButton.style.fontSize = "125px";
+                    noButton.style.display = "none";
+                    emoji.textContent = "😡";
+		    questionText.style.display = "none";	
+                }
+            });
+        </script>
+    </body>
+</html>
