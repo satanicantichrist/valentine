@@ -1,7 +1,7 @@
 
 # Valentine
 
-Valentine is a small web-page for anyone who wants to ask some one to be their valentine. With special system thats prevents them to say no.
+Valentine is a small web-page for anyone who wants to ask someone to be their valentine. With special system thats prevents them to say no.
 
 You can use it with this link: https://valentine.satanicantichrist.cz/
 
