@@ -11,5 +11,4 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
-          port: ${{ secrets.PORT }}
           script_path: ~/valentine-deploy/deploy.sh
