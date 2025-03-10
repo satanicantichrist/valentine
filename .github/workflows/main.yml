@@ -11,4 +11,4 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
-          script: ./deploy.sh
+          script: ./valentine-deploy/deploy.sh
